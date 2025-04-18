@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facebook Auto Like & Comment</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 400px;
+    }
+    input, textarea, button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>FB Auto Like & Comment</h2>
+    <input type="text" id="postId" placeholder="Facebook Post ID" required />
+    <textarea id="comment" placeholder="Comment (optional)"></textarea>
+    <input type="text" id="cookie" placeholder="Your Facebook Cookie" required />
+    <button onclick="sendRequest()">Send Like & Comment</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function sendRequest() {
+      const postId = document.getElementById('postId').value;
+      const comment = document.getElementById('comment').value;
+      const cookie = document.getElementById('cookie').value;
+
+      if (!postId || !cookie) {
+        alert("Please enter both Post ID and Cookie.");
+        return;
+      }
+
+      document.getElementById("result").innerText = "This demo cannot send actual requests without backend.";
+    }
+  </script>
+</body>
+</html>
